@@ -1,0 +1,8 @@
+from collections import Counter
+
+def solution(participant, completion):
+    # Counter를 활용해 participant에서 completion를 제거한 결과를 얻어낼 수 있다.
+    # completion의 길이는 participant의 길이보다 1 작으므로 결과적으로 {"완주하지 못한 선수" : 1} 꼴로 남게 된다.
+    ans = Counter(participant) - Counter(completion)
+    # ans에서 key값만 뽑아 list로 형변환 해준 뒤 0번째 요소를 반환한다.
+    return list(ans.keys())[0]
